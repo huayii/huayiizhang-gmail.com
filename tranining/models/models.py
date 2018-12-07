@@ -4,6 +4,7 @@ from odoo import models, fields, api
 from odoo.exceptions import UserError, ValidationError
 import datetime
 from odoo.tools import DEFAULT_SERVER_DATE_FORMAT as DATE_FORMAT
+from train import ResParter
 
 class TrainLesson(models.Model):
     _name = 'pscloud.train.lesson'

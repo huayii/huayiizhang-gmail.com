@@ -4,6 +4,7 @@ from odoo import models, fields, api
 from odoo.exceptions import UserError, ValidationError
 import datetime
 from odoo.tools import DEFAULT_SERVER_DATE_FORMAT as DATE_FORMAT
+from train import ResParter
 
 class TrainLesson(models.Model):
     _name = 'pscloud.train.lesson'
@@ -20,17 +21,17 @@ class TrainLesson(models.Model):
         ('confirm', '确认'),
         ], string='状态', readonly=True, copy=False, index=True, default='draft')
     seat_qty = fields.Integer(string='座位数')
-    subject_id = fields.Many2one('pscloud.training.subject', string='科目')
+    subject_id = fields.Many2one('pscloud.train.subject', string='科目')
     person_id = fields.Many2one('res.partner', related='subject_id.person_id', readonly=True)
     desc = fields.Text(string='描述')
 
 
 ######科目
-class TrainingSubject(models.Model):
-    _name = 'pscloud.training.subject'
+class TrainSubject(models.Model):
+    _name = 'pscloud.train.subject'
     _description = "科目"
 
     name = fields.Char(string='名称')
     person_id = fields.Many2one('res.partner', string='负责人')
-    lesson_ids = fields.One2many('pscloud.training.lesson', 'subject_id', string='课程')
+    lesson_ids = fields.One2many('pscloud.train.lesson', 'subject_id', string='课程')
     desc = fields.Text(string='描述')
