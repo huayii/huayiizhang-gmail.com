@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_./src/user/tranining_./src/user/tranining,./src/user/tranining../src/user/tranining,model_./src/user/tranining_./src/user/tranining,,1,0,0,0
+access_pscloud_train_subject,pscloud.train.subject,pscloud_train.model_pscloud_train_subject,base.group_user,1,1,1,1
