@@ -4,7 +4,7 @@ from odoo import models, fields, api
 from odoo.exceptions import UserError, ValidationError
 import datetime
 from odoo.tools import DEFAULT_SERVER_DATE_FORMAT as DATE_FORMAT
-from train import ResParter
+
 
 class TrainLesson(models.Model):
     _name = 'pscloud.train.lesson'
@@ -24,7 +24,6 @@ class TrainLesson(models.Model):
     subject_id = fields.Many2one('pscloud.train.subject', string='科目')
     person_id = fields.Many2one('res.partner', related='subject_id.person_id', readonly=True)
     desc = fields.Text(string='描述')
-
 
 ######科目
 class TrainSubject(models.Model):
